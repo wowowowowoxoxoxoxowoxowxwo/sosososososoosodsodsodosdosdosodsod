@@ -312,6 +312,27 @@ if (bgImgElement) {
     bgImgElement.src = 'images/background.jpg';
 }
 
+const meteorContainer = document.getElementById('meteor-container');
+if (meteorContainer) {
+    function spawnMeteor() {
+        const meteor = document.createElement('div');
+        meteor.className = 'meteor';
+        meteor.textContent = '+';
+        const startX = Math.random() * (window.innerWidth * 0.9);
+        const startY = Math.random() * (window.innerHeight * 0.2) - 30;
+        meteor.style.left = `${startX}px`;
+        meteor.style.top = `${startY}px`;
+        const duration = Math.random() * 3.0 + 5.0;
+        meteor.style.animation = `meteorFall ${duration}s linear forwards`;
+        meteorContainer.appendChild(meteor);
+        setTimeout(() => {
+            meteor.remove();
+        }, duration * 1000);
+        setTimeout(spawnMeteor, Math.random() * 900 + 600);
+    }
+    setTimeout(spawnMeteor, 3500);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     animateTabTitle();
 });
