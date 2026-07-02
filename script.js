@@ -1,4 +1,3 @@
-// Dynamic Mobile/Touch Device Detection (V7)
 const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 const isMobileSize = window.innerWidth <= 900;
@@ -7,13 +6,11 @@ if (isTouchDevice || isMobileUA || isMobileSize) {
     document.body.classList.add('is-mobile');
 }
 
-// View Switching / Navigation Logic
 const viewTriggers = document.querySelectorAll('.view-trigger');
 const backButtons = document.querySelectorAll('.back-btn');
 const panels = document.querySelectorAll('.view-panel');
 const landingView = document.getElementById('landing-view');
 
-// Transition to a full-screen sub-page view from landing
 viewTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
         const targetId = trigger.getAttribute('data-target');
@@ -23,7 +20,6 @@ viewTriggers.forEach(trigger => {
             landingView.classList.remove('active');
             targetView.classList.add('active');
             
-            // If opening sub-page master views, make sure menus are reset to active
             if (targetId === 'view-members') {
                 resetMembersView();
             } else if (targetId === 'view-partners') {
@@ -33,7 +29,6 @@ viewTriggers.forEach(trigger => {
     });
 });
 
-// Standard transition back to landing view (excluding specific master-detail views)
 backButtons.forEach(btn => {
     if (btn.id !== 'members-back-btn' && btn.id !== 'partners-back-btn') {
         btn.addEventListener('click', (e) => {
@@ -48,7 +43,6 @@ backButtons.forEach(btn => {
     }
 });
 
-// Members Sub-Navigation Logic (Master-Detail V5)
 const membersBackBtn = document.getElementById('members-back-btn');
 const membersListMenu = document.getElementById('members-list-menu');
 const profileDetails = document.querySelectorAll('.member-profile-detail');
@@ -60,30 +54,24 @@ function resetMembersView() {
     membersBackBtn.innerHTML = '&larr; [ back ]';
 }
 
-// Clicks on members names from list
 profileTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
         const targetProfileId = trigger.getAttribute('data-profile');
         const targetProfile = document.getElementById(targetProfileId);
         
         if (targetProfile) {
-            // Hide list
             membersListMenu.classList.remove('active');
-            // Show target profile
             profileDetails.forEach(detail => detail.classList.remove('active'));
             targetProfile.classList.add('active');
-            // Change back button text
             membersBackBtn.innerHTML = '&larr; [ back to list ]';
         }
     });
 });
 
-// Members page specific back button
 if (membersBackBtn) {
     membersBackBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         
-        // Check if any profile detail is currently open
         let activeProfile = null;
         profileDetails.forEach(detail => {
             if (detail.classList.contains('active')) {
@@ -92,19 +80,16 @@ if (membersBackBtn) {
         });
         
         if (activeProfile) {
-            // Return to list menu
             activeProfile.classList.remove('active');
             membersListMenu.classList.add('active');
             membersBackBtn.innerHTML = '&larr; [ back ]';
         } else {
-            // Close members view completely, return to landing view
             document.getElementById('view-members').classList.remove('active');
             landingView.classList.add('active');
         }
     });
 }
 
-// Partners Sub-Navigation Logic (Master-Detail V8)
 const partnersBackBtn = document.getElementById('partners-back-btn');
 const partnersListMenu = document.getElementById('partners-list-menu');
 const partnerDetails = document.querySelectorAll('.partner-profile-detail');
@@ -116,30 +101,24 @@ function resetPartnersView() {
     partnersBackBtn.innerHTML = '&larr; [ back ]';
 }
 
-// Clicks on partners names from list
 partnerTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
         const targetProfileId = trigger.getAttribute('data-partner');
         const targetProfile = document.getElementById(targetProfileId);
         
         if (targetProfile) {
-            // Hide list
             partnersListMenu.classList.remove('active');
-            // Show target profile
             partnerDetails.forEach(detail => detail.classList.remove('active'));
             targetProfile.classList.add('active');
-            // Change back button text
             partnersBackBtn.innerHTML = '&larr; [ back to list ]';
         }
     });
 });
 
-// Partners page specific back button
 if (partnersBackBtn) {
     partnersBackBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         
-        // Check if any profile detail is currently open
         let activeProfile = null;
         partnerDetails.forEach(detail => {
             if (detail.classList.contains('active')) {
@@ -148,26 +127,22 @@ if (partnersBackBtn) {
         });
         
         if (activeProfile) {
-            // Return to list menu
             activeProfile.classList.remove('active');
             partnersListMenu.classList.add('active');
             partnersBackBtn.innerHTML = '&larr; [ back ]';
         } else {
-            // Close partners view completely, return to landing view
             document.getElementById('view-partners').classList.remove('active');
             landingView.classList.add('active');
         }
     });
 }
 
-// 3D Parallax Mouse Movement Effect on Character Background Container
 const parallaxBg = document.querySelector('.parallax-bg-container');
 let mouseX = 0;
 let mouseY = 0;
 
 if (parallaxBg) {
     window.addEventListener('mousemove', (e) => {
-        // Skip heavy mouse transformations on mobile devices
         if (document.body.classList.contains('is-mobile')) return;
         
         const normX = (e.clientX / window.innerWidth) - 0.5;
@@ -180,29 +155,24 @@ if (parallaxBg) {
     });
 }
 
-// Custom Cursor & Falling Snowflake Trail Logic
 const cursorDot = document.getElementById('custom-cursor-dot');
 const cursorRing = document.getElementById('custom-cursor-ring');
 
 let cursorX = 0, cursorY = 0;
 
-// Trail throttling variables
 let lastSnowflakeTime = 0;
 let lastX = 0;
 let lastY = 0;
 const activeSnowflakes = [];
 
 window.addEventListener('mousemove', (e) => {
-    // Skip cursor simulation on mobile/touch screens
     if (document.body.classList.contains('is-mobile')) return;
     
     cursorX = e.clientX;
     cursorY = e.clientY;
     
-    // Position the plus cursor dot
     cursorDot.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
     
-    // Spawn snowflake trail particles (throttled for subtle visual weight)
     const now = Date.now();
     const dist = Math.hypot(cursorX - lastX, cursorY - lastY);
     
@@ -214,7 +184,6 @@ window.addEventListener('mousemove', (e) => {
     }
 });
 
-// Add active hover classes to cursor on interactive tags
 document.addEventListener('mouseover', (e) => {
     if (document.body.classList.contains('is-mobile')) return;
     if (e.target.closest('a, button, input, select, textarea, .menu-item, .back-btn')) {
@@ -228,7 +197,6 @@ document.addEventListener('mouseout', (e) => {
     }
 });
 
-// Snowflake spawn helper
 function createSnowflake(x, y) {
     const flake = document.createElement('div');
     flake.className = 'snowflake-particle';
@@ -253,9 +221,7 @@ function createSnowflake(x, y) {
     activeSnowflakes.push(data);
 }
 
-// Snowflake render updater loop
 function updateSnowflakes() {
-    // If mobile, clear any trailing snowflakes to conserve memory
     if (document.body.classList.contains('is-mobile')) {
         activeSnowflakes.forEach(flake => flake.el.remove());
         activeSnowflakes.length = 0;
@@ -283,7 +249,6 @@ function updateSnowflakes() {
 }
 updateSnowflakes();
 
-// Background Music Control
 const audio = document.getElementById('bg-music');
 const musicToggleBtn = document.getElementById('music-toggle-btn');
 const volumeSlider = document.getElementById('volume-slider');
@@ -312,7 +277,6 @@ volumeSlider.addEventListener('input', (e) => {
     audio.muted = val === 0;
 });
 
-// Gesture trigger for audio autoplay
 function startMusicOnGesture() {
     audio.play().then(() => {
         musicToggleBtn.classList.add('playing');
@@ -325,7 +289,6 @@ function startMusicOnGesture() {
 document.addEventListener('click', startMusicOnGesture, true);
 document.addEventListener('keydown', startMusicOnGesture, true);
 
-// Browser Tab Title Wave
 const baseTitle = "Fatal.sh";
 let titleCharIndex = 0;
 
@@ -343,14 +306,12 @@ function animateTabTitle() {
     setTimeout(animateTabTitle, 350);
 }
 
-// Load default background on startup & clear any stale theme states
 localStorage.removeItem('fatal-theme');
 const bgImgElement = document.querySelector('.character-bg-img');
 if (bgImgElement) {
     bgImgElement.src = 'images/background.jpg';
 }
 
-// Master Initializer
 document.addEventListener('DOMContentLoaded', () => {
     animateTabTitle();
 });
