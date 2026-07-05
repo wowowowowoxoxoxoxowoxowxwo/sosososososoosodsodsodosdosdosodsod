@@ -7,12 +7,12 @@ import datetime
 import sys
 import os
 
-# Server port configuration
+
 PORT = 3000
 
-# Telegram API Configuration
-TELEGRAM_BOT_TOKEN = '8950884444:AAGgUj5dT6gbCxdEFPt285g9FxJWo5Es1VU'
-OWNER_CHAT_IDS = ['8534469502'] # Forward report details to owners (test chat ID configured)
+
+TELEGRAM_BOT_TOKEN = '""'
+OWNER_CHAT_IDS = ['""'] # Forward report details to owners (test chat ID configured)
 
 def send_telegram_message(bot_token, chat_id, text):
     """
@@ -49,23 +49,23 @@ class RefinedReportHandler(http.server.SimpleHTTPRequestHandler):
 
     def handle_report(self):
         try:
-            # Read JSON payload
+
             content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)
             data = json.loads(post_data.decode('utf-8'))
             
-            # Extract textual report fields
+
             report_type = data.get('report-type', 'N/A')
             attacker_info = data.get('attacker-info', 'N/A')
             report_desc = data.get('report-desc', 'N/A')
             callback_info = data.get('callback-info', '')
             screenshots = data.get('report-screenshots', '')
             
-            # Format the Telegram alert report message
+
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             callback_text = callback_info if callback_info.strip() else "Not provided"
             
-            # Sanitize inputs to prevent breaking Telegram's HTML format parser
+
             def safe_html(text):
                 return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
@@ -87,13 +87,13 @@ class RefinedReportHandler(http.server.SimpleHTTPRequestHandler):
                 f"{screenshot_section}"
             )
             
-            # Forward the formatted alert to all configured owners
+
             success = True
             for chat_id in OWNER_CHAT_IDS:
                 if not send_telegram_message(TELEGRAM_BOT_TOKEN, chat_id, telegram_text):
                     success = False
             
-            # Respond to the client with JSON output
+
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
