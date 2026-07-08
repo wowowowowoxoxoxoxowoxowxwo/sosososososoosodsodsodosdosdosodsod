@@ -1053,7 +1053,7 @@ body.is-mobile .snowflake-particle {
     will-change: transform, opacity;
 }
 
-#profile-purple.member-profile-detail.active {
+#profile-empty.member-profile-detail.active {
     display: block;
     animation: profileFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
