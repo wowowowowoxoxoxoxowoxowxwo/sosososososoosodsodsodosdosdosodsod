@@ -200,9 +200,9 @@ document.addEventListener('mouseout', (e) => {
 function createSnowflake(x, y) {
     const flake = document.createElement('div');
     flake.className = 'snowflake-particle';
-    flake.textContent = '·';
+    flake.textContent = '•';
     
-    const size = Math.random() * 3 + 5; // 5px to 8px size range
+    const size = Math.random() * 6 + 4; // 4px to 10px range
     flake.style.fontSize = `${size}px`;
     
     document.body.appendChild(flake);
@@ -210,12 +210,12 @@ function createSnowflake(x, y) {
     const data = {
         el: flake,
         x: x,
-        y: y + 2, // offset slightly from center of plus
-        vx: Math.random() * 0.8 - 0.4, // very soft drift
-        vy: Math.random() * 0.3 + 0.3, // slow downward gravity speed
+        y: y + 2,
+        vx: Math.random() * 0.8 - 0.4,
+        vy: Math.random() * 0.2 + 0.1,
         opacity: 0.8,
         scale: 1,
-        life: 50
+        life: 60
     };
     
     activeSnowflakes.push(data);
@@ -231,10 +231,10 @@ function updateSnowflakes() {
     for (let i = activeSnowflakes.length - 1; i >= 0; i--) {
         const flake = activeSnowflakes[i];
         flake.y += flake.vy;
-        flake.vy += 0.03; // gravity pull
-        flake.x += flake.vx;
-        flake.opacity -= 0.015; // slow fade out
-        flake.scale -= 0.008; // slow shrink size
+        flake.vy += 0.012; // slow gravity build-up
+        flake.x += flake.vx + Math.sin(flake.life * 0.15) * 0.25; // soft swaying wind drift
+        flake.opacity -= 0.012; // slower fade
+        flake.scale -= 0.006; // slower shrink
         
         if (flake.opacity <= 0 || flake.scale <= 0 || flake.life <= 0) {
             flake.el.remove();
@@ -293,16 +293,21 @@ const baseTitle = "Fatal.sh";
 let titleCharIndex = 0;
 
 function animateTabTitle() {
-    let animatedTitle = "";
-    for (let i = 0; i < baseTitle.length; i++) {
-        if (i === titleCharIndex) {
-            animatedTitle += baseTitle[i].toUpperCase();
-        } else {
-            animatedTitle += baseTitle[i].toLowerCase();
+    if (titleCharIndex === baseTitle.length) {
+        document.title = ":3";
+        titleCharIndex = 0;
+    } else {
+        let animatedTitle = "";
+        for (let i = 0; i < baseTitle.length; i++) {
+            if (i === titleCharIndex) {
+                animatedTitle += baseTitle[i].toUpperCase();
+            } else {
+                animatedTitle += baseTitle[i].toLowerCase();
+            }
         }
+        document.title = animatedTitle;
+        titleCharIndex++;
     }
-    document.title = animatedTitle;
-    titleCharIndex = (titleCharIndex + 1) % baseTitle.length;
     setTimeout(animateTabTitle, 350);
 }
 
