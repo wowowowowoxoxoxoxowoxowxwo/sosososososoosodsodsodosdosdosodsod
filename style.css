@@ -1059,8 +1059,7 @@ body.is-mobile .snowflake-particle {
 }
 
 #profile-empty.member-profile-detail.active,
-#profile-cullen.member-profile-detail.active,
-#profile-hochstapelei.member-profile-detail.active {
+#profile-cullen.member-profile-detail.active {
     display: block;
     animation: profileFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
