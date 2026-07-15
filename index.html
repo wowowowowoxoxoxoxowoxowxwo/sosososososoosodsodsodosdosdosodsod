@@ -1,14 +1,20 @@
-<!--                   /^--^\     /^--^\     /^--^\            -->
-<!--                   \____/     \____/     \____/            -->
-<!--                  /      \   /      \   /      \           -->
-<!--                 |        |  |       | |        |          -->
-<!--                  \__  __/   \__  __/   \__  __/           -->
-<!-- |^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^| -->
-<!-- | | | | | | | | | | |\ \| | |/ /| | | | | | \ \ | | | | | -->
-<!-- ####################/ /######\ \###########/ /########### -->
-<!-- | | | | | | | | | | \/| | | | \/| | | | | |\/ | | | | | | -->
-<!-- |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_| -->
+<!--
+                          ,
+   ,-.       _,---._ __  / \
+  /  )    .-'       `./ /   \
+ (  (   ,'            `/    /|
+  \  `-"             \'\   / |
+   `.              ,  \ \ /  |
+    /`.          ,'-`----Y   |
+   (            ;        |   '
+   |  ,-.    ,-'         |  /
+   |  | (   |            | /
+   )  |  \  `.___________|/
+   `--'   `--'
 
+Mrr meow :3  
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +22,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fatal.sh</title>
     
-    <link rel="icon" type="image/jpeg" href="fatal.jpg">
-    <link rel="apple-touch-icon" type="image/jpeg" href="fatal.jpg">
+    <link rel="icon" type="image/jpeg" href="/images/fatal.jpg">
+    <link rel="apple-touch-icon" type="image/jpeg" href="/images/fatal.jpg">
     
-    <meta name="description" content="An archive of some catboys ^-^">
+    <meta name="description" content="archive of catboys x_x">
     <meta name="keywords" content="Fatal.sh, Catboy">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph for social sharing -->
+    
     <meta property="og:title" content="Fatal.sh">
-    <meta property="og:description" content="An archive of some catboys ^-^">
+    <meta property="og:description" content="archive of catboys x_x">
     <meta property="og:image" content="https://fatal.sh/images/discordembedfatal.jpg">
     <meta property="og:image:secure_url" content="https://fatal.sh/images/discordembedfatal.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -37,427 +43,199 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=31">
+    <link rel="stylesheet" href="style_v47.css">
 </head>
 <body>
 
-    <div id="custom-cursor-dot" class="custom-cursor-dot">+</div>
-    <div id="custom-cursor-ring" class="custom-cursor-ring"></div>
-
-    <audio id="bg-music" src="music.mp3" loop></audio>
-
-    <div class="parallax-bg-container">
-        <img src="images/background.jpg" alt="Background" class="character-bg-img">
-        <div id="meteor-container" class="meteor-container"></div>
-    </div>
-
-    <div id="landing-view" class="view-panel active">
-        <div class="landing-content">
-            <h1 class="landing-title">FATAL.SH</h1>
-            
-            <nav class="landing-menu">
-                <a href="https://t.me/fatalannc" target="_blank" rel="noopener noreferrer" class="menu-item">
-                    <span class="menu-num">0/1</span>
-                    <span class="menu-label">Telegram</span>
-                </a>
-                <button class="menu-item view-trigger" data-target="view-members">
-                    <span class="menu-num">0/2</span>
-                    <span class="menu-label">Members</span>
-                </button>
-                <button class="menu-item view-trigger" data-target="view-purpose">
-                    <span class="menu-num">0/3</span>
-                    <span class="menu-label">Purpose</span>
-                </button>
-                <button class="menu-item view-trigger" data-target="view-archive">
-                    <span class="menu-num">0/4</span>
-                    <span class="menu-label">Archive</span>
-                </button>
-                <button class="menu-item view-trigger" data-target="view-partners">
-                    <span class="menu-num">0/5</span>
-                    <span class="menu-label">Partners</span>
-                </button>
-            </nav>
-        </div>
-
-        <div class="audio-control-container">
-            <button id="music-toggle-btn" class="music-square-btn" aria-label="Toggle Background Music">
-                <svg class="icon-music-note" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h6V3h-8z"/>
-                </svg>
-            </button>
-            
-            <div class="audio-hover-slider">
-                <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.05" value="0.08">
-            </div>
-        </div>
-    </div>
-
-<div id="view-members" class="view-panel sub-page-view">
-        <div class="sub-page-header">
-            <button id="members-back-btn" class="back-btn">&larr; [ back ]</button>
-        </div>
-        
-        <div class="sub-page-content">
-            <h2 class="sub-page-title">MEMBERS</h2>
-            
-            
-            <div id="members-list-menu" class="members-menu active">
-                <button class="menu-item profile-trigger" data-profile="profile-catalouge">
-                    <span class="menu-num">0/1</span>
-                    <span class="menu-label">Catalogue</span>
-                </button>
-                <button class="menu-item profile-trigger" data-profile="profile-empty">
-                    <span class="menu-num">0/2</span>
-                    <span class="menu-label">Empty</span>
-                </button>
-                <button class="menu-item profile-trigger" data-profile="profile-cullen">
-                    <span class="menu-num">0/3</span>
-                    <span class="menu-label">Cullen</span>
-                </button>
-            </div>
-
-            
-            <div id="members-profiles-container" class="profiles-container">
-                
-                
-                <div id="profile-catalouge" class="member-profile-detail">
-                    <div class="member-card">
-                        <div class="member-avatar-container">
-                            <img src="images/catalouge.jpg" alt="Catalogue avatar" class="member-avatar">
-                        </div>
-                        <h3 class="member-name">Catalogue</h3>
-                        <p class="member-role">Founder</p>
-                        <div class="member-bio">
-                            <p class="bio-quote">I have a feeling x_x</p>
-                            <a href="https://t.me/illusoryer" target="_blank" rel="noopener noreferrer" class="member-telegram-btn">
-                                <span>Telegram</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="profile-empty" class="member-profile-detail">
-                    <div class="member-card">
-                        <div class="member-avatar-container">
-                            <img src="images/empty.png" alt="Empty avatar" class="member-avatar">
-                        </div>
-                        <h3 class="member-name">Empty</h3>
-                        <p class="member-role">Member</p>
-                        <div class="member-bio">
-                            <p class="bio-quote">everything is empty x_x</p>
-                            <a href="https://t.me/emptychannelx_x" target="_blank" rel="noopener noreferrer" class="member-telegram-btn">
-                                <span>Telegram</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="profile-cullen" class="member-profile-detail">
-                    <div class="member-card">
-                        <div class="member-avatar-container">
-                            <img src="images/cullen.jpg" alt="Cullen avatar" class="member-avatar">
-                        </div>
-                        <h3 class="member-name">Cullen</h3>
-                        <p class="member-role">Member</p>
-                        <div class="member-bio">
-                            <p class="bio-quote">You must have feelings p_q</p>
-                            <a href="http://t.me/stabbedme" target="_blank" rel="noopener noreferrer" class="member-telegram-btn">
-                                <span>Telegram</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div> 
-        </div> 
-    </div>
-
-    <div id="view-purpose" class="view-panel sub-page-view">
-        <div class="sub-page-header">
-            <button class="back-btn">&larr; [ back ]</button>
-        </div>
-        
-        <div class="sub-page-content">
-            <h2 class="sub-page-title">PURPOSE</h2>
-            
-            <div class="purpose-container">
-                <p class="purpose-text">
-                    Fatal.sh is an elite cybersecurity and digital defense collective established in 2026. Founded with a resolute commitment to combating online extortion, child exploitation, and modern digital threats, the group actively operates in the domains of cybersecurity, network vulnerability analysis, and exploit mitigation. Beyond counter-extortion operations, Fatal.sh specializes in researching exploit-related platforms, auditing security infrastructure, and securing vulnerable systems to neutralize digital threat actors.
-                </p>
-                <p class="purpose-motto">"Nothing is secure but some things are sacred."</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="view-archive" class="view-panel sub-page-view">
-        <div class="sub-page-header">
-            <button class="back-btn">&larr; [ back ]</button>
-        </div>
-        
-        <div class="sub-page-content">
-            <h2 class="sub-page-title">ARCHIVE</h2>
-            
-            <div class="archive-list">
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">10.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">KNR Introduction</h3>
-                    <p class="archive-item-desc">KNR Introduction completed in detail. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/152" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">10.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">ResortNLM got documented</h3>
-                    <p class="archive-item-desc">ResortNLM documented in detail. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/147" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">10.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">ArrestNLM got documented</h3>
-                    <p class="archive-item-desc">ArrestNLM documented in detail. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/147" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">10.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">HarrasSR1 got documented</h3>
-                    <p class="archive-item-desc">HarrasSR1 documented in detail. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/147" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">10.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">KrownSec got documented</h3>
-                    <p class="archive-item-desc">KrownSec documented in detail. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/147" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">08.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">"A R C H I V E" tool got leaked</h3>
-                    <p class="archive-item-desc">"A R C H I V E", an extortion-based tool, has been leaked by us.</p>
-                    <a href="https://t.me/fatalannc/145" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">07.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">TearSC got ran out documented</h3>
-                    <p class="archive-item-desc">TearSC got ran out documented.</p>
-                    <a href="https://t.me/fatalannc/139" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">02.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">147 Roster leaked</h3>
-                    <p class="archive-item-desc">147 Roster leaked. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/130" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">02.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">Nefarious Maniac Kult Introduction</h3>
-                    <p class="archive-item-desc">Nefarious Maniac Kult Introduction completed in detail. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/132" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">02.07.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">SemiNMK got documented</h3>
-                    <p class="archive-item-desc">SemiNMK documented. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/fatalannc/131" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">01.07.2026</span>
-                        <span class="archive-badge development">Development</span>
-                    </div>
-                    <h3 class="archive-item-title">3 starter documents initiated</h3>
-                    <p class="archive-item-desc">Our collective has officially started compiling 3 new starter documents to expand our target intelligence and OSINT coverage.</p>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">27-28.06.2026</span>
-                        <span class="archive-badge partnership">Partnership</span>
-                    </div>
-                    <h3 class="archive-item-title">CyberShield partnership announcement</h3>
-                    <p class="archive-item-desc">Established an official partnership with CyberShield helper organization to coordinate digital defense, OSINT intelligence, and safety support for victims of cyber harassment.</p>
-                    <a href="https://t.me/fatalannc/125" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">27-28.06.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">LorNWL got documented</h3>
-                    <p class="archive-item-desc">LorNWL got documented. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/Fatalityxd/20" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">24-25.06.2026</span>
-                        <span class="archive-badge active">Documentation</span>
-                    </div>
-                    <h3 class="archive-item-title">Letoa got documented</h3>
-                    <p class="archive-item-desc">Letoa got documented. Secure reference available via Telegram channel archive.</p>
-                    <a href="https://t.me/Fatalityxd/19" target="_blank" rel="noopener noreferrer" class="archive-link">
-                        <span>Reference Link</span>
-                    </a>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">25.06.2026</span>
-                        <span class="archive-badge development">Development</span>
-                    </div>
-                    <h3 class="archive-item-title">Target surveillance initiated</h3>
-                    <p class="archive-item-desc">Started research, development, and surveillance work on LorNWL, Asylum764, Arrest764, and Acheron1414 targets.</p>
-                </div>
-
-                <div class="archive-item">
-                    <div class="archive-header-row">
-                        <span class="archive-date">21-22.06.2026</span>
-                        <span class="archive-badge establishment">Establishment</span>
-                    </div>
-                    <h3 class="archive-item-title">Fatal.sh opening log</h3>
-                    <p class="archive-item-desc">Our private collective Fatal.sh was officially established with a clean focus on cyber vigilance, anti-extortion campaigns, and fighting child abuse online.</p>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <div id="view-partners" class="view-panel sub-page-view">
-        <div class="sub-page-header">
-            <button id="partners-back-btn" class="back-btn">&larr; [ back ]</button>
-        </div>
-        
-        <div class="sub-page-content">
-            <h2 class="sub-page-title">PARTNERS</h2>
-            
-            <div id="partners-list-menu" class="partners-menu active">
-                <button class="menu-item partner-trigger" data-partner="partner-swatted">
-                    <span class="menu-num">0/1</span>
-                    <span class="menu-label">Swatted</span>
-                </button>
-                <button class="menu-item partner-trigger" data-partner="partner-cybershield">
-                    <span class="menu-num">0/2</span>
-                    <span class="menu-label">CyberShield</span>
-                </button>
-            </div>
- 
-            <div id="partners-profiles-container" class="profiles-container">
-                <div id="partner-swatted" class="partner-profile-detail">
-                    <div class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="images/swattedwtf.jpg" alt="Swatted logo" class="partner-logo">
-                        </div>
-                        <div class="partner-info">
-                            <h3 class="partner-name">Swatted</h3>
-                            <p class="partner-role">Partner / Sponsor</p>
-                            <div class="partner-bio">
-                                <p class="bio-quote">Swatted.wtf is a small initiative supporting victims of online abuse, sextortion, harassment, and doxxing. We build and operate OSINT tooling that aggregates publicly available and previously-leaked information, helping victims identify their exposure, assisting investigations into online abuse, and sharing relevant findings with the appropriate authorities.</p>
-                                <div class="partner-links-row">
-                                    <a href="https://swattedw.tf" target="_blank" rel="noopener noreferrer" class="partner-btn">
-                                        <span>Website</span>
-                                    </a>
-                                    <a href="https://t.me/Swattedwtf" target="_blank" rel="noopener noreferrer" class="partner-btn">
-                                        <span>Telegram</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div id="custom-cursor-dot" class="crosshair-cursor"></div>
 
-                <div id="partner-cybershield" class="partner-profile-detail">
-                    <div class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="images/CyberSheild.jpg" alt="CyberShield logo" class="partner-logo">
-                        </div>
-                        <div class="partner-info">
-                            <h3 class="partner-name">CyberShield</h3>
-                            <p class="partner-role">Partner / Cyber Safety Initiative</p>
-                            <div class="partner-bio">
-                                <p class="bio-quote">CyberShield is a small non-profit initiative focused on supporting victims of online abuse, sextortion, harassment, and other cyber-enabled harm. Our work mainly includes OSINT research, collecting and analyzing publicly available information, assisting victims where possible, and sharing relevant findings with the appropriate authorities.</p>
-                                <div class="partner-links-row">
-                                    <a href="https://cybershield.help/" target="_blank" rel="noopener noreferrer" class="partner-btn">
-                                        <span>Website</span>
-                                    </a>
-                                    <a href="https://t.me/cybershieldhelp" target="_blank" rel="noopener noreferrer" class="partner-btn">
-                                        <span>Telegram</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+    <audio id="bg-music" src="/images/music.mp3?v=41" loop></audio>
+
+    
+    <pre id="bg-ascii-art"></pre>
+
+    
+    <section class="profile-card-container">
+        <div id="profile-display-area" class="profile-display-area">
+            
+            
+            <article id="profile-founder" class="profile-card">
+                <div class="card-inner">
+                    <div class="card-avatar-wrapper">
+                        <img src="/images/catalouge.jpg" alt="Catalogue" class="card-avatar">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="profile-name">Catalogue</h2>
+                        <p class="profile-role">Founder</p>
+                        <p class="profile-quote">"I have a feeling x_x"</p>
+                        
+                        <a href="https://t.me/illusoryer" target="_blank" rel="noopener noreferrer" class="telegram-icon-link" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" class="telegram-svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.43 3.81-1.57 4.6-.18 4.6.48 0 .15-.02.3-.03.44z"/>
+                            </svg>
+                        </a>
+                        
+                        <button class="profile-back-btn">[ back ]</button>
                     </div>
                 </div>
-            </div>
+            </article>
+
+            
+            <article id="profile-members" class="profile-card">
+                <div class="card-inner">
+                    <div class="card-avatar-wrapper">
+                        <img src="/images/cullen.jpg" alt="Cullen" class="card-avatar">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="profile-name">Cullen</h2>
+                        <p class="profile-role">Member</p>
+                        <p class="profile-quote">"You must have feelings p_q"</p>
+                        
+                        <a href="http://t.me/stabbedme" target="_blank" rel="noopener noreferrer" class="telegram-icon-link" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" class="telegram-svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.43 3.81-1.57 4.6-.18 4.6.48 0 .15-.02.3-.03.44z"/>
+                            </svg>
+                        </a>
+                        
+                        <button class="profile-back-btn">[ back ]</button>
+                    </div>
+                </div>
+            </article>
+
+
+
+            
+            <article id="profile-partners" class="profile-card">
+                <div class="card-inner panel-card-inner">
+                    <h2 class="profile-name">Partners</h2>
+                    <p class="profile-role">Cooperating Initiatives</p>
+                    
+                    <div class="panel-scroll-content">
+                        
+                        <div class="partners-menu-list">
+                            <button class="partner-menu-item-btn" data-target="partner-swatted">> Swatted</button>
+                            <button class="partner-menu-item-btn" data-target="partner-cybershield">> CyberShield</button>
+                        </div>
+                    </div>
+                    <button class="profile-back-btn">[ back ]</button>
+                </div>
+            </article>
+
+            
+            <article id="profile-partner-swatted" class="profile-card">
+                <div class="card-inner">
+                    <div class="card-avatar-wrapper">
+                        <img src="/images/swattedwtf.jpg" alt="Swatted" class="card-avatar">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="profile-name">Swatted</h2>
+                        <p class="profile-role">Partner / Sponsor</p>
+                        <p class="profile-quote">"Supporting digital safety, threat intelligence, and OSINT research."</p>
+                        <p class="partner-desc">Swatted is a leading digital defense and intelligence initiative specializing in coordinate monitoring, security mitigation, and OSINT (Open Source Intelligence) investigations. They track online threat actors and help communities protect themselves from swatting attacks and digital extortion.</p>
+                        
+                        <div class="partner-card-socials">
+                            <a href="https://swattedw.tf" target="_blank" rel="noopener noreferrer" class="telegram-icon-link" aria-label="Website">
+                                <svg viewBox="0 0 24 24" class="telegram-svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/Swattedwtf" target="_blank" rel="noopener noreferrer" class="telegram-icon-link" aria-label="Telegram">
+                                <svg viewBox="0 0 24 24" class="telegram-svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.43 3.81-1.57 4.6-.18 4.6.48 0 .15-.02.3-.03.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <button class="profile-back-btn">[ back ]</button>
+                    </div>
+                </div>
+            </article>
+
+            
+            <article id="profile-partner-cybershield" class="profile-card">
+                <div class="card-inner">
+                    <div class="card-avatar-wrapper">
+                        <img src="/images/CyberSheild.jpg" alt="CyberShield" class="card-avatar">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="profile-name">CyberShield</h2>
+                        <p class="profile-role">Partner / Cyber Safety</p>
+                        <p class="profile-quote">"OSINT research, assisting victims of abuse, and sharing intelligence with authorities."</p>
+                        <p class="partner-desc">CyberShield is a dedicated cyber safety organization that provides hands-on technical assistance to victims of cyber-bullying, online harassment, and digital exploitation. They conduct deep OSINT research and cooperate closely with legal authorities to ensure online safety.</p>
+                        
+                        <div class="partner-card-socials">
+                            <a href="https://cybershield.help/" target="_blank" rel="noopener noreferrer" class="telegram-icon-link" aria-label="Website">
+                                <svg viewBox="0 0 24 24" class="telegram-svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/cybershieldhelp" target="_blank" rel="noopener noreferrer" class="telegram-icon-link" aria-label="Telegram">
+                                <svg viewBox="0 0 24 24" class="telegram-svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.43 3.81-1.57 4.6-.18 4.6.48 0 .15-.02.3-.03.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <button class="profile-back-btn">[ back ]</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    
+    <main class="terminal-grid">
+        
+        
+        <header class="terminal-header">
+            <h1 class="brand-title">FATAL.SH</h1>
+        </header>
+
+        
+        <section class="horizontal-menu-panel">
+            <nav class="member-toggles">
+                <div class="toggle-group">
+                    <span class="toggle-role">> Founder</span>
+                    <button class="toggle-btn" data-target="founder">> catalogue</button>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-role">> Co owner</span>
+                    <span class="toggle-text">> purple (Inactive)</span>
+                    <span class="toggle-text">> sha (Inactive)</span>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-role">> Member</span>
+                    <button class="toggle-btn" data-target="members">> cullen</button>
+                </div>
+            </nav>
+        </section>
+
+        <section class="content-spacer-panel"></section>
+
+        
+        <section class="bottom-right-panel">
+            <nav class="nav-toggles">
+                <a href="https://t.me/Fatalityxd" target="_blank" rel="noopener noreferrer" class="nav-btn">Archive</a>
+                <a href="https://t.me/fatalannc" target="_blank" rel="noopener noreferrer" class="nav-btn">Channel</a>
+                <button class="nav-btn" data-target="partners">Partners</button>
+            </nav>
+        </section>
+
+    </main>
+
+    
+    <div class="player">
+        <div class="player-icon">♫</div>
+        <div class="player-controls">
+            <button id="music-toggle-btn" class="play-btn" aria-label="Toggle Audio">&#9658;</button>
+            <input type="range" id="volume-slider" class="seek" min="0" max="1" step="0.05" value="0.08">
         </div>
     </div>
 
-    <script src="script.js?v=31"></script>
+    <script src="script_v47.js"></script>
 </body>
 </html>

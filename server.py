@@ -38,8 +38,7 @@ class RefinedReportHandler(http.server.SimpleHTTPRequestHandler):
     Custom HTTP Request Handler that serves the website static files 
     and handles the secure JSON API endpoint for submitting incident reports.
     """
-    def do_GET(self):
-        return super().do_GET()
+
 
     def do_POST(self):
         if self.path == '/api/report':
