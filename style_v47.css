@@ -129,7 +129,7 @@ a, button, input, select, textarea, .nav-btn, .toggle-btn {
     grid-template-rows: auto auto 1fr;
     width: 100vw;
     height: 100vh;
-    padding: 60px 80px;
+    padding: 10vh 12vw;
     gap: 40px;
     position: relative;
     z-index: 5;
@@ -246,7 +246,7 @@ body.modal-active .terminal-grid {
     transform: translate(-50%, -50%);
     z-index: 1000;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     pointer-events: none;
 }
 
@@ -292,7 +292,7 @@ body.modal-active .terminal-grid {
     text-align: center;
     gap: 20px;
     width: 100%;
-    max-width: 380px;
+    max-width: 304px;
     margin: 0 auto;
     transition: border-color 0.3s ease;
 }
